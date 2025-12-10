@@ -14,4 +14,9 @@ With this in mind, we want to focus on this central question: **"How impactful i
 ### About the Dataset
 The dataset in which we are working with is recorded professionally and thoroughly by Oracle's Elixir. In particular, we are focusing on data extracted from professional League of Legends matches that took place in 2025. Adding on, this dataset contains important information about statistics and results that can be used by players to understand ideal courses of action within their own games and lead others to strategically dominate against their opponents. Diving into a bit more about specific data collected from these matches, this includes features such as the differences in gold for teams at particular intervals, elemental drakes each team has slain, and results of each match.
 
-Within the dataset offers a vast amount of matches and columns, with there being 118932 rows
+Within the dataset offers a vast amount of matches, with there being 118932 rows containing information about those matches. Of the many columns that also help categorize all of the data, the following consists of the ones that were relevant to our central question and a brief description of each:
+
+- 'golddiffat10': test
+- 'golddiffat15': test
+- 'golddiffat20': test
+- 'golddiffat25': test
