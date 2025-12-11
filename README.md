@@ -1,5 +1,5 @@
 # League of Legends Gold Difference Analysis
-This is a final project for DSC 80 at UCSD which determines how likely a professional League of Legends Esports team is to win a match given gold differences at particular times and the number of drakes/types of drakes slain. Using many different forms of analysis such as statistical methods of hypothesis testing and the baseline model of a decision tree, this projects intends to foster better decision-making within the popular game to improve strategies and win rates.
+This is a final project for DSC 80 at UCSD which determines how likely a professional League of Legends Esports team is to win a match given gold differences at particular times and the number of drakes/types of drakes slain. Using many different forms of analysis such as statistical methods of hypothesis testing, the baseline model of a decision tree, and fairness analysis, this projects intends to foster better decision-making within the popular game to improve strategies and win rates.
 
 Authors: Calvin Truong and Jake Wanderer
 
@@ -16,7 +16,44 @@ The dataset in which we are working with is recorded professionally and thorough
 
 Within the dataset offers a vast amount of matches, with there being 118932 rows containing information about those matches. Of the many columns that also help categorize all of the data, the following consists of the ones that were relevant to our central question and a brief description of each:
 
-- 'golddiffat10': test
-- 'golddiffat15': test
-- 'golddiffat20': test
-- 'golddiffat25': test
+- `golddiffat10`: test
+  
+- `golddiffat15`: test
+  
+- `golddiffat20`: test
+  
+- `golddiffat25`: test
+  
+- `elementaldrakes`: test
+  
+- `opp_elementaldrakes`: test
+  
+- `infernals`: test
+  
+- `mountains`: test
+  
+- `clouds`: test
+  
+- `oceans`: test
+  
+- `chemtechs`: test
+  
+- `hextechs`: test
+  
+- `dragons (type unknown)`: test
+
+- `result`: test
+
+## Data Cleaning and Exploratory Data Analysis
+
+## Assessment of Missingness
+
+## Hypothesis Testing
+
+## Framing a Prediction Problem
+
+## Baseline Model
+
+## Final Model
+
+## Fairness Analysis
