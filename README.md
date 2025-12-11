@@ -43,6 +43,17 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 - `result`: This column represents the outcome of a professional match with **1** representing a win and **0** representing a loss for a particular team or team member. 
 
 ## Data Cleaning and Exploratory Data Analysis
+### Data Cleaning
+lalalalalallalallala
+
+### Univariate Analysis
+lalalalalala
+
+### Bivariate Analysis
+lalallala
+
+### Interesting Aggregates
+lalalalalalalal
 
 ## Assessment of Missingness
 
