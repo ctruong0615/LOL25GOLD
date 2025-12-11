@@ -57,6 +57,11 @@ lalallala
 lalalalalalalal
 
 ## Assessment of Missingness
+### NMAR Analysis
+ajdsioa
+
+### Missingness Dependency
+aisjdofasio
 
 ## Hypothesis Testing
 
