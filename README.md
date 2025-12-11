@@ -23,20 +23,22 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 - `elementaldrakes`: This column quantifies the amount of elemental drakes that a player's team has slain in the match.
   
 - `opp_elementaldrakes`: Similarly to `elementaldrakes`, this quantifies the amount of elemental drakes a player's opposing team has slain in the match.
+
+- `firstdragon`: This column indicates which team/player from a team was able to secure the first dragon slain in the match, which is represented with a **1** if successful and **0** if unsuccessful.
   
-- `infernals`: test
+- `infernals`: N/A
   
-- `mountains`: test
+- `mountains`: N/A
   
-- `clouds`: test
+- `clouds`: N/A
   
-- `oceans`: test
+- `oceans`: N/A
   
-- `chemtechs`: test
+- `chemtechs`: N/A
   
-- `hextechs`: test
+- `hextechs`: N/A
   
-- `dragons (type unknown)`: test
+- `dragons (type unknown)`: N/A
 
 - `result`: This column represents the outcome of a professional match with **1** representing a win and **0** representing a loss for a particular team or team member. 
 
