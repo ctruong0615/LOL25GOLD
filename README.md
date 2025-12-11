@@ -17,6 +17,10 @@ The dataset in which we are working with is recorded professionally and thorough
 
 Within the dataset offers a vast amount of matches, with there being 118932 rows containing information about those matches. Of the many columns that also help categorize all of the data, the following consists of the ones that were relevant to our central question and a brief description of each:
 
+-`league`:
+
+-`side`:
+
 - `golddiffat10`: This column represents the difference in gold between a player and the player of the corresponding position on the opposing team at the 10-minute mark of a match. A positive value represents that the player is ahead in gold to their opponent while a negative value indicates that a player is behind in gold.
   
 - `golddiffat15`, `golddiffat20`, and `golddiffat25`: Similarly, each of these columns represent the same thing as `golddiffat10`, but for their respective times within the match.
@@ -62,10 +66,23 @@ lalalalalalalal
 ### NMAR Analysis
 Within the entire dataset, there seems to be a several columns that are not missing at random (NMAR), which includes `ban1`, `ban2` `ban3` `ban4` `ban5`. When analyzing these columns, it is apparent that missingness does not depend on any other columns, and it is only these columns whose values are not missing based on a pattern or trend of some sort. When thinking about this from the perspective of a player, the player can simply choose to not ban a champion, perhaps due to strategic reasons. As a result, these columns should be NMAR because there is a chance that missingness just depends on the actual missing value as players cause this missing value from deciding not to ban.
 
-Additionally, there is a rather simple method of obtaining the data needed to explain the missingness, which would make these columns missing at random (MAR_. To do this, we can organize data into a column `used_all_bans`, which contains a value **1** for every ban has been made by players, and a **0** if every ban has not been made
+Additionally, there is a rather simple method of obtaining the data needed to explain the missingness, which would make these columns missing at random (MAR_. To do this, we can organize data into a column `used_all_bans`, which contains a value **1** for every ban has been made by players, and a **0** if every ban has not been made.
 
 ### Missingness Dependency
-can look into: golddiffat25 or other specific times
+This section uses permutation tests to determine whether or not the missingness of `golddiffat10` depends on two different columns, that being `league` and `side`. For both of the permutation tests, the test statistic chosen is Total Variance Distance (TVD) and the significance level that is chosen is 0.5.
+
+To start off, `golddiffat10` will be tested with `league` to demonstrate that the missingness in `golddiffat10` is dependent on `league`.
+
+We establish a null hypothesis and alternative hypothesis.
+**Null Hypothesis:** The distribution of `league` when `golddiffat10` is missing is the same when `golddiffat10` is not missing.
+**Alternative Hypothesis:** The distribution of `league` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing.
+
+
+As for `golddiffat10` and `side`, we will test to demonstrate that the missingness in `golddiffat10` is not dependent on `league`, with the following null and alternative hypothesis in mind.
+
+**Null Hypothesis:** The distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing.
+**Alternative Hypothesis:** The distribution of `side` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing.
+
 
 ## Hypothesis Testing
 
