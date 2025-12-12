@@ -81,7 +81,33 @@ Each histogram displays that the distribution of `golddiffat10`, `golddiffat15`,
 ### Bivariate Analysis
 For our bivariate analysis, it was performed with each of the four gold differences columns and `result`.
 
-[insert all 4 plots]
+<iframe
+  src="assets/bivar1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/bivar2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/bivar3.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/bivar4.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 Again, since the bivariate analysis consisted of similar columns, we generalized the descriptions and elaborations of the plot.
 
@@ -107,11 +133,21 @@ We establish a null hypothesis and alternative hypothesis.
 
 The table below represents a distribution of `league` when `golddiffat10` is missing and when it is not missing.
 
-[insert image]
+<iframe
+  src="assets/missingness1.html"
+  width="900"
+  height="900"
+  frameborder="0"
+></iframe>
 
 Here, we find a TVD of 0.9907631405322191 and a p-value of 0.0 after performing the permutation test on the two columns. Below displays the empirical distribution of the TVDs. Using this information, we reject the null hypothesis in favor of the alternative hypothesis because the p-value is less than or equal to our significance level, which means that the distribution of `league` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does depend on the `league` column.
 
-[insert image]
+<iframe
+  src="assets/TVD1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 As for `golddiffat10` and `side`, we will test to demonstrate that the missingness in `golddiffat10` is not dependent on `league`, with the following null and alternative hypothesis in mind.
 
@@ -120,9 +156,21 @@ As for `golddiffat10` and `side`, we will test to demonstrate that the missingne
 
 Below is the observed distribution of `side` when `golddiffat10` is missing and when it is not missing.
 
-[insert image]
+<iframe
+  src="assets/missingness2.html"
+  width="900"
+  height="900"
+  frameborder="0"
+></iframe>
 
 Once finished performing permutation tests on the two columns, we find a TVD of 0.0 and a p-value of 1.0. Below shows the empirical distribution of the TVDs. Using this information, we fail to reject the null hypothesis in favor of the alternative hypothesis because the p-value is greater than our significance level, which means that the distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does not depend on the `side` column.
+
+<iframe
+  src="assets/TVD2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Hypothesis Testing
 
