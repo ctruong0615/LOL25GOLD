@@ -82,7 +82,7 @@ The table below represents a distribution of `league` when `golddiffat10` is mis
 
 [insert image]
 
-Here, we find a TVD of ____ and a p-value of 0 after performing the permutation test on the two columns. Below displays the empirical distribution of the TVDs. Using this information, we reject the null hypothesis in favor of the alternative hypothesis because the p-value is less than or equal to our significance level, which means that the distribution of `league` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does depend on the `league` column.
+Here, we find a TVD of 0.9907631405322191 and a p-value of 0.0 after performing the permutation test on the two columns. Below displays the empirical distribution of the TVDs. Using this information, we reject the null hypothesis in favor of the alternative hypothesis because the p-value is less than or equal to our significance level, which means that the distribution of `league` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does depend on the `league` column.
 
 [insert image]
 
@@ -95,7 +95,7 @@ Below is the observed distribution of `side` when `golddiffat10` is missing and 
 
 [insert image]
 
-Once finished performing permutation tests on the two columns, we find a TVD of _____ and a p-value of 1. Below shows the empirical distribution of the TVDs. Using this information, we fail to reject the null hypothesis in favor of the alternative hypothesis because the p-value is greater than our significance level, which means that the distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does not depend on the `side` column.
+Once finished performing permutation tests on the two columns, we find a TVD of 0.0 and a p-value of 1.0. Below shows the empirical distribution of the TVDs. Using this information, we fail to reject the null hypothesis in favor of the alternative hypothesis because the p-value is greater than our significance level, which means that the distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does not depend on the `side` column.
 
 ## Hypothesis Testing
 
