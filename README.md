@@ -53,6 +53,27 @@ For the univariate analysis, it was performed on the gold differences seen acros
   frameborder="0"
 ></iframe>
 
+<iframe
+  src="assets/univ2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/univ3.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/univ4.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 Seeing how each histogram contains data from very similar columns, we generalized the descriptions and elaborations of the plots.
 
 Each histogram displays that the distribution of `golddiffat10`, `golddiffat15`, `golddiffat20`, and `golddiffat25` are each all normal. We can conclude that this data is balanced and predictable with its behavior, so each distribution can be used well for analysis.
