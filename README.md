@@ -46,7 +46,13 @@ When cleaning our data, only a handful of columns out of the dozens were kept wh
 ### Univariate Analysis
 For the univariate analysis, it was performed on the gold differences seen across different time intervals of the game, that being the 10, 15, 20, and 25-minute mark. The following histograms show those distributions on a histogram with the matching times respectively.
 
-[insert all 4 plots]
+<iframe
+  src="assets/univ1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 Seeing how each histogram contains data from very similar columns, we generalized the descriptions and elaborations of the plots.
 
 Each histogram displays that the distribution of `golddiffat10`, `golddiffat15`, `golddiffat20`, and `golddiffat25` are each all normal. We can conclude that this data is balanced and predictable with its behavior, so each distribution can be used well for analysis.
