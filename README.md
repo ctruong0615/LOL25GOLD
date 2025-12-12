@@ -8,7 +8,7 @@ Authors: Calvin Truong and Jake Wanderer
 ### Background
 League of Legends (LoL) is a popular video games in the world classified as a multiplayer online battle arena (MOBA). In the game, teams of 5 are split among 5 positions that occupy different parts of the map (that being Top, Jungle, Middle, Bottom, and Support) to compete against each other and destroy the enemy's 'nexus', an important objective that ends the game with its descrution. Developed by the North American video game developer and publishered, Riot Games, League of Legends is often one of, if not the most, popular game in the Esports industry. As a result, achieving victories and championship titles is crucial for players and organizations to generate thousands upon millions of dollars, so constantly adapting and developing new strategies for success is crucial to survive.
 
-That being said, achieving a high win rate isn't necessarily obtained by simply being good at the game mechanically--understanding when and how to prioritize getting gold, the game's in-game currency, is equally, or debatably more, important. Since your character becomes stronger by securing more and more gold throughout several segments of the game, having more gold than your opponent can be seen as key to maximizing your chances of winning. Although you passively gain gold and can easily earn a small amount of gold by killing small creatures known as minions, bigger objectives like drakes (also known as dragons, but the term can be used interchangeably) grant massive amount of golds that can completely shift the odds of winning a match. Each game also spawns in different types of unique drakes (e.g. Chemtech, Infernal, Mountain, etc.), and being able to slay the first drake at earlier stages of the game has the potential to drastically impact the odds of the match positively for that team from its gold and effects.
+That being said, achieving a high win rate isn't necessarily obtained by simply being good at the game mechanically--understanding when and how to prioritize getting gold, the game's in-game currency, is equally, or debatably more, important. Since your character becomes stronger by securing more and more gold throughout several segments of the game, having more gold than your opponent can be seen as key to maximizing your chances of winning. Although you passively gain gold and can easily earn a small amount of gold by killing small creatures known as minions, bigger objectives like drakes (also known as dragons, but the term can be used interchangeably) can grant higher amount of golds. Though, it is actually the effects known as 'buffs' that objectives are targeted for, which can completely shift the odds of winning a match with powerful traits for a team.
 
 With this in mind, we want to focus on this central question: **"How impactful is prioritizing elemental drakes in comparison to prioritizing gold to a team for their chances of winning?"**
 
@@ -21,6 +21,10 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 
 - `side`: This column represents the side of a specific team or player in the game. There are two sides that are played indicated by the color `blue` and `red`.
 
+- `goldat10`: This column represents how much gold a player or a team has at the 10-minute mark of a match.
+
+- `goldat15`, `goldat20`, and `goldat25`: These columns function the same way `goldat10` does, but represent the amount of gold at the 15, 20, and 25-minute marks of a match respectively.
+
 - `golddiffat10`: This column represents the difference in gold between a player and the player of the corresponding position on the opposing team at the 10-minute mark of a match. A positive value represents that the player is ahead in gold to their opponent while a negative value indicates that a player is behind in gold.
   
 - `golddiffat15`, `golddiffat20`, and `golddiffat25`: Similarly, each of these columns represent the same thing as `golddiffat10`, but for their respective times within the match.
@@ -31,33 +35,30 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
   
 - `opp_elementaldrakes`: Similarly to `elementaldrakes`, this quantifies the amount of elemental drakes a player's opposing team has slain in the match.
 
-- `dragons` and `opp_dragons`: These columns function similarly to `elementaldrakes` and `opp_elementaldrakes`, but are used to quantify every drakes regardless of their elemental type.
+- `dragons` and `opp_dragons`: These columns function similarly to `elementaldrakes` and `opp_elementaldrakes`, but are used to quantify every drake regardless of their elemental type.
   
-- `infernals`: N/A
-  
-- `mountains`: N/A
-  
-- `clouds`: N/A
-  
-- `oceans`: N/A
-  
-- `chemtechs`: N/A
-  
-- `hextechs`: N/A
-  
-- `dragons (type unknown)`: N/A
-
 - `result`: This column represents the outcome of a professional match with **1** representing a win and **0** representing a loss for a particular team or team member. 
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
-lalalalalallalallala
+When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `golddiffat10`, `golddiffat15`, `golddiffat20`, `golddiffat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. After getting all of the relevant columns for analysis, we 
 
 ### Univariate Analysis
-lalalalalala
+For the univariate analysis, it was performed on the gold differences seen across different time intervals of the game, that being the 10, 15, 20, and 25-minute mark. The following histograms show those distributions on a histogram with the matching times respectively.
+
+[insert all 4 plots]
+Seeing how each histogram contains data from very similar columns, we generalized the descriptions and elaborations of the plots.
+
+Each histogram displays that the distribution of `golddiffat10`, `golddiffat15`, `golddiffat20`, and `golddiffat25` are each all normal. We can conclude that this data is balanced and predictable with its behavior, so each distribution can be used well for analysis.
 
 ### Bivariate Analysis
-lalallala
+For our bivariate analysis, it was performed with each of the four gold differences columns and `result`.
+
+[insert all 4 plots]
+
+Again, since the bivariate analysis consisted of similar columns, we generalized the descriptions and elaborations of the plot.
+
+Based on the four scatter plots, it is visually clear that when a player/team is ahead in gold compared to their opponent, with players/teams winning as they maintain a higher gold difference later into the game.
 
 ### Interesting Aggregates
 lalalalalalalal
@@ -98,9 +99,9 @@ Once finished performing permutation tests on the two columns, we find a TVD of 
 
 ## Hypothesis Testing
 
-**Null Hypothesis:** Winning team gold at 10 min is equal to or less than losing team gold at 10 min.
+**Null Hypothesis:** 
 
-**Alternative Hypothesis:** Winning team gold at 10 min is greater than losing team gold at 10 min.
+**Alternative Hypothesis:** 
 
 **Test Statistic:**
 
