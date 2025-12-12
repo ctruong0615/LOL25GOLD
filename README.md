@@ -17,9 +17,9 @@ The dataset in which we are working with is recorded professionally and thorough
 
 Within the dataset offers a vast amount of matches, with there being 118932 rows containing information about those matches. Of the many columns that also help categorize all of the data, the following consists of the ones that were relevant to our central question and a brief description of each:
 
--`league`:
+- `league`: This column indicates the Esports tournament in which a game was played.
 
--`side`:
+- `side`: This column represents the side of a specific team or player in the game. There are two sides that are played indicated by the color `blue` and `red`.
 
 - `golddiffat10`: This column represents the difference in gold between a player and the player of the corresponding position on the opposing team at the 10-minute mark of a match. A positive value represents that the player is ahead in gold to their opponent while a negative value indicates that a player is behind in gold.
   
@@ -77,12 +77,24 @@ We establish a null hypothesis and alternative hypothesis.
 **Null Hypothesis:** The distribution of `league` when `golddiffat10` is missing is the same when `golddiffat10` is not missing.
 **Alternative Hypothesis:** The distribution of `league` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing.
 
+The table below represents a distribution of `league` when `golddiffat10` is missing and when it is not missing.
+
+[insert image]
+
+Here, we find a TVD of ____ and a p-value of 0 after performing the permutation test on the two columns. Below displays the empirical distribution of the TVDs. Using this information, we reject the null hypothesis in favor of the alternative hypothesis because the p-value is less than or equal to our significance level, which means that the distribution of `league` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does depend on the `league` column.
+
+[insert image]
 
 As for `golddiffat10` and `side`, we will test to demonstrate that the missingness in `golddiffat10` is not dependent on `league`, with the following null and alternative hypothesis in mind.
 
 **Null Hypothesis:** The distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing.
 **Alternative Hypothesis:** The distribution of `side` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing.
 
+Below is the observed distribution of `side` when `golddiffat10` is missing and when it is not missing.
+
+[insert image]
+
+Once finished performing permutation tests on the two columns, we find a TVD of _____ and a p-value of 1. Below shows the empirical distribution of the TVDs. Using this information, we fail to reject the null hypothesis in favor of the alternative hypothesis because the p-value is greater than our significance level, which means that the distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does not depend on the `side` column.
 
 ## Hypothesis Testing
 
