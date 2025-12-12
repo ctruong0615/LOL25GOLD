@@ -10,7 +10,7 @@ League of Legends (LoL) is a popular video games in the world classified as a mu
 
 That being said, achieving a high win rate isn't necessarily obtained by simply being good at the game mechanically--understanding when and how to prioritize getting gold, the game's in-game currency, is equally, or debatably more, important. Since your character becomes stronger by securing more and more gold throughout several segments of the game, having more gold than your opponent can be seen as key to maximizing your chances of winning. Although you passively gain gold and can easily earn a small amount of gold by killing small creatures known as minions, bigger objectives like drakes (also known as dragons, but the term can be used interchangeably) grant massive amount of golds that can completely shift the odds of winning a match. Each game also spawns in different types of unique drakes (e.g. Chemtech, Infernal, Mountain, etc.), and being able to slay the first drake at earlier stages of the game has the potential to drastically impact the odds of the match positively for that team from its gold and effects.
 
-With this in mind, we want to focus on this central question: **"How impactful is prioritizing elemental drakes in terms of gold differences and win rates for a team?"**
+With this in mind, we want to focus on this central question: **"How impactful is prioritizing elemental drakes in comparison to prioritizing gold to a team for their chances of winning?"**
 
 ### About the Dataset
 The dataset in which we are working with is recorded professionally and thoroughly by Oracle's Elixir. In particular, we are focusing on data extracted from professional League of Legends matches that took place in 2025. Adding on, this dataset contains important information about statistics and results that can be used by players to understand ideal courses of action within their own games and lead others to strategically dominate against their opponents. Diving into a bit more about specific data collected from these matches, this includes features such as the differences in gold for teams at particular intervals, elemental drakes each team has slain, and results of each match.
@@ -97,6 +97,19 @@ Below is the observed distribution of `side` when `golddiffat10` is missing and 
 Once finished performing permutation tests on the two columns, we find a TVD of _____ and a p-value of 1. Below shows the empirical distribution of the TVDs. Using this information, we fail to reject the null hypothesis in favor of the alternative hypothesis because the p-value is greater than our significance level, which means that the distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does not depend on the `side` column.
 
 ## Hypothesis Testing
+
+**Null Hypothesis:** Winning team gold at 10 min is equal to or less than losing team gold at 10 min.
+
+**Alternative Hypothesis:** Winning team gold at 10 min is greater than losing team gold at 10 min.
+
+**Test Statistic:**
+
+**Significance Level:** 
+
+**Visualization:** Below is [brief explanation of what the visualization is]
+[insert image of histogram probably]
+
+After performing our hypothesis test, we obtain a p-value of _______, which means we _____ the null hypothesis
 
 ## Framing a Prediction Problem
 
