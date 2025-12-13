@@ -128,18 +128,18 @@ Based on the four scatter plots, it is visually clear that when a player/team is
 |             0 |    15953.8 |       -90.7236 |           1.56813 | 0.424682 |
 |             1 |    16043.4 |        90.8434 |           2.78862 | 0.575424 |
 
-Above displays some interesting aggregates that may be useful in our analysis. Here, we groupby firstdragon in our cleaned dataset and calculuate the mean of the statistics with numeric values. When examing each of the columns with one another, we are able to easily see at a first glance that teams that secure the first dragon are, on average, in the lead in terms of gold, elemental dragons slain, and wins. This could potentially show that securing the first dragon of the game can typically put a team ahead of gold, and will greatly support a team in winning a match.
+Above are some interesting aggregates that may be useful in our analysis. Here, we groupby firstdragon in our cleaned dataset and calculate the mean of the statistics with numeric values. When examining each of the columns with one another, we are able to easily see at a first glance that teams that secure the first dragon are, on average, in the lead in terms of gold, elemental dragons slain, and wins. This could potentially show that securing the first dragon of the game can typically put a team ahead of gold and will greatly support a team in winning a match.
 
 ## Assessment of Missingness
 ### NMAR Analysis
 Within the entire dataset, there seem to be several columns that are not missing at random (NMAR), which include `goldat20`, `opp_goldat20`, `goldat25`, and `opp_goldat25`. These values can be NaN, even when `goldat10` and `goldat15` are not. That is because it is possible for the game to end before this time. I would argue that the true values here should be the values at the time the game ended. This means the true values should typically be smaller values, making the missingness dependent on the values.
 
 ### Missingness Dependency
-This section uses permutation tests to determine whether or not the missingness of `golddiffat10` depends on two different columns, that being `league` and `side`. For both of the permutation tests, the test statistic chosen is Total Variance Distance (TVD) and the significance level that is chosen is 0.5.
+This section uses permutation tests to determine whether or not the missingness of `golddiffat10` depends on two different columns, that being `league` and `side`. For both of the permutation tests, the test statistic chosen is Total Variance Distance (TVD), and the significance level that is chosen is 0.5.
 
 To start off, `golddiffat10` will be tested with `league` to demonstrate that the missingness in `golddiffat10` is dependent on `league`.
 
-We establish a null hypothesis and alternative hypothesis.
+We establish a null hypothesis and an alternative hypothesis.
 **Null Hypothesis:** The distribution of `league` when `golddiffat10` is missing is the same when `golddiffat10` is not missing.
 **Alternative Hypothesis:** The distribution of `league` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing.
 
@@ -161,7 +161,7 @@ Here, we find a TVD of 0.9907631405322191 and a p-value of 0.0 after performing 
   frameborder="0"
 ></iframe>
 
-As for `goldat10` and `side`, we will test to demonstrate that the missingness in `goldat10` is not dependent on `league`, with the following null and alternative hypothesis in mind.
+As for `goldat10` and `side`, we will test to demonstrate that the missingness in `goldat10` is not dependent on `league`, with the following null and alternative hypotheses in mind.
 
 **Null Hypothesis:** The distribution of `side` when `goldat10` is missing is the same when `goldat10` is not missing.
 **Alternative Hypothesis:** The distribution of `side` when `goldat10` is missing is ***not*** the same when `goldat10` is not missing.
@@ -232,23 +232,23 @@ Given the results of our Permutations tests, we can conclude missingness in the 
 | VCS         |        1 |      1     |
 | WLDs        |        1 |      0.875 |
 
-Because every value in the LPL league is missing, we can not impute values here. We can impute values for WLDs, however WLDs only has 192 rows, of which only 12.5% are missing. This means we would only get 24 rows of missing values or 12 games. Additionally, the other column we care about elementaldrakes is missing for every missing value of goldat10. We have decided not to use missing values from this column because we still have about 19k rows and the information we do have on it is based on 'dragons (type unkown)'. Elderdragon is so different from the other dragons (it is almost always gamewinning), so it seems risky to use this column. We could try imputing values for elementaldrakes, but this could create rare pairings of elementaldrakes and opp_elementaldrakes much more frequently, and even impossible pairings such as (4,4).
+Because every value in the LPL league is missing, we can not impute values here. We can impute values for WLDs; however, WLDs only has 192 rows, of which only 12.5% are missing. This means we would only get 24 rows of missing values or 12 games. Additionally, the other column we care about elementaldrakes is missing for every missing value of goldat10. We have decided not to use missing values from this column because we still have about 19k rows, and the information we do have on it is based on 'dragons (type unknown)'. Elderdragon is so different from the other dragons (it is almost always game-winning), so it seems risky to use this column. We could try imputing values for elementaldrakes, but this could create rare pairings of elementaldrakes and opp_elementaldrakes much more frequently, and even impossible pairings such as (4,4).
 
 ## Hypothesis Testing
 
-Our hypothesis test is conducted to determine if there is a significant difference between a team's amount of gold at 10 minutes when they secure the first dragon and a team's amount of gold at 10 minutes when they lose the first dragon. This testing is necessary because it will help us determine how impactful slaying the first dragon is for gold at 10 minutes for a teams, which can be important in understanding better decision-making and shifting strategies when trying to win a match of League of Legends.
+Our hypothesis test is conducted to determine if there is a significant difference between a team's amount of gold at 10 minutes when they secure the first dragon and a team's amount of gold at 10 minutes when they lose the first dragon. This testing is necessary because it will help us determine how impactful slaying the first dragon is for gold at 10 minutes for a team, which can be important in understanding better decision-making and shifting strategies when trying to win a match of League of Legends.
 
 **Null Hypothesis:** Team gold at 10 min for teams who won first dragon is equal to team gold at 10 min for teams who lost first dragon.
 
 **Alternative Hypothesis:** Team gold at 10 min for teams who won first dragon is not equal to team gold at 10 min for teams who lost first dragon.
 
-**Test Statistic:** Mean difference between team gold at 10 min for teams who won first dragon and lost first dragon.
+**Test Statistic:** Mean difference between team gold at 10 min for teams who won the first dragon and lost the first dragon.
 
 **Significance Level:** 0.05
 
-We chose to do a one-sided hypothesis test because it is expected that the team that got the firstdragon is ahead in the game, and therefore has more gold. Because we are doing a one-sided test, we are using Mean difference as our test statistic.
+We chose to do a one-sided hypothesis test because it is expected that the team that got the first dragon is ahead in the game, and therefore has more gold. Because we are doing a one-sided test, we are using Mean difference as our test statistic.
 
-After performing our hypothesis test, we obtain a p-value of 0.0, which means we reject the null hypothesis in favor of the alternative hypothesis. We conclude that team gold at 10 minutes when teams win first drake is **not** the same as a team's gold when they lose first dragon, which can suggest that knowing how to play around the early dragon spawns can help teams earn more gold and become stronger than their opponents; however, this may simply be a correlation. We will better answer this question in parts 6 and 7, where we design predictive models based on drakes and gold.
+After performing our hypothesis test, we obtain a p-value of 0.0, which means we reject the null hypothesis in favor of the alternative hypothesis. We conclude that team gold at 10 minutes, when teams win first drake is **not** the same as a team's gold when they lose first drake, which can suggest that knowing how to play around the early dragon spawns can help teams earn more gold and become stronger than their opponents; however, this may simply be a correlation. We will better answer this question in parts 6 and 7, where we design predictive models based on drakes and gold.
 
 ## Framing a Prediction Problem
 
@@ -258,7 +258,7 @@ For our baseline model, we are predicting the outcome of the game from minute 10
 
 ## Baseline Model
 
-Our baseline model uses the features `goldat10` and `firstdragon`. `firstdragon` is nominal data, and `goldat10` is quantitative. We did not need to perform any encodings for these features because `firstdragon` is already a column of 1s and 0s for 'got first dragon' and 'lost first dragon' respectively. We used a random forest and achieved a test accuracy of approximately 63.5%. I think this is okay given that we are predicting at 10 minutes of game time. However, when we train a model only on `goldat10`, it has a 1% worse accuracy than this model. Then, when training a model only on `firstdragon`, it has about 7% lower accuracy, meaning `firstdragon` is largely overshadowed. This helps to answer our original questions posed in part 1, as it shows that goldat10 is significantly more important and should be prioritized.
+Our baseline model uses the features `goldat10` and `firstdragon`. `firstdragon` is nominal data, and `goldat10` is quantitative. We did not need to perform any encodings for these features because `firstdragon` is already a column of 1s and 0s for 'got first dragon' and 'lost first dragon' respectively. We used a random forest and achieved a test accuracy of approximately 63.5%. I think this is okay given that we are predicting at 10 minutes of game time. However, when we train a model only on `goldat10`, it has a 1% worse accuracy than this model. Then, when training a model only on `firstdragon`, it has about 7% lower accuracy, meaning `firstdragon` is largely overshadowed. This helps to answer our original questions posed in part 1, as it shows that goldat10 is significantly more important than firstdragon and should be prioritized. (Though these two things often go together)
 
 ## Final Model
 
@@ -270,9 +270,9 @@ We additionally performed permutation testing to see the importance of drakes/op
 
 ## Fairness Analysis
 
-It is generally considered easier for red side to secure dragons, and blue side to get other objectives, such as baron and rift herald. Because we only used dragons in our model, we will investigate if this makes our model unfair for the blue or red side.
+It is generally considered easier for red side to secure dragons, and blue side to get other objectives, such as baron and rift herald. Because we only used dragons in our model, we will investigate whether this makes our model unfair for the blue or red side.
 
-We will run a one sided hypothesis test to test if red has a greater recall than blue. This is what we would expect because it is easier for red to get dragons (which our model uses), and it is easier for blue to get other objectives like baron (which our model does not use). 
+We will run a one-sided hypothesis test to test if red has a greater recall than blue. This is what we would expect because it is easier for red to get dragons (which our model uses), and it is easier for blue to get other objectives like baron (which our model does not use). 
 
 **Null Hypothesis:** The recall for blue side is greater than or equal to the recall for red side.
 
