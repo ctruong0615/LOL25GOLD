@@ -208,6 +208,7 @@ For our baseline model, we are predicting the outcome of the game from minute 10
 
 ## Baseline Model
 
+Our baseline model uses the features `goldat10` and `firstdragon`. `firstdragon` is nominal data, and `goldat10` is quantitative. We did not need to perform any encodings for these features because `firstdragon` is already a column of 1s and 0s for 'got first dragon' and 'lost first dragon' respectively. We achieved a test accuracy of approximately 63.5%. I think this is okay given that we are predicting at 10 minutes of game time. However, when we train a model only on `goldat10`, it has a 1% worse accuracy than this model. Then, when training a model only on `firstdragon`, it has about 7% lower accuracy, meaning `firstdragon` is largely overshadowed. This helps to answer our original questions posed in part 1, as it shows that goldat10 is significantly more important and should be prioritized.
 ## Final Model
 
 ## Fairness Analysis
