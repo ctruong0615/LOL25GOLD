@@ -209,3 +209,7 @@ We will run a one sided hypothesis test to test if red has a greater recall than
 
 **Significance Level:** 0.05
 
+**P-value:** 0.027
+
+**Conclusion**: We reject the null hypothesis at an alpha = .05 significance level. It appears our model has a greater recall for red side than blue side.
+
