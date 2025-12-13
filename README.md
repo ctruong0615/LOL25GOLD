@@ -187,9 +187,6 @@ Our hypothesis test is conducted to determine if there is a significant differen
 
 **Significance Level:** 0.05
 
-**Visualization:** Below is [brief explanation of what the visualization is]
-[insert image of histogram probably]
-
 After performing our hypothesis test, we obtain a p-value of 0.0, which means we reject the null hypothesis in favor of the alternative hypothesis. We conclude that team gold at 10 minutes when teams win first drake is **not** the same as a team's gold when they lose first dragon, which can suggest that knowing how to play around the early dragon spawns can drastically favor the odds of winning for a team seeing how they can earn more gold and become stronger than their opponents.
 
 ## Framing a Prediction Problem
