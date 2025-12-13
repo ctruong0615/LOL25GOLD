@@ -6,34 +6,34 @@ Authors: Calvin Truong and Jake Wanderer
 
 ## Introduction
 ### Background
-League of Legends (LoL) is one of the most popular video games in the world classified as a multiplayer online battle arena (MOBA). In the game, teams of 5 are split among 5 positions that occupy different parts of the map (that being Top, Jungle, Middle, Bottom, and Support) to compete against each other and destroy the enemy's 'nexus', an important objective that ends the game with its destruction. Developed by the North American video game developer and publisher, Riot Games, League of Legends is often one of, if not the most, popular game in the Esports industry. As a result, achieving victories and championship titles is crucial for players and organizations to generate thousands upon millions of dollars, so constantly adapting and developing new strategies for success is crucial to survive.
+League of Legends (LoL) is one of the most popular video games in the world, classified as a multiplayer online battle arena (MOBA). In the game, teams of 5 are split among 5 positions that occupy different parts of the map (that being Top, Jungle, Middle, Bottom, and Support) to compete against each other and destroy the enemy's 'nexus', an important objective that ends the game with its destruction. Developed by the North American video game developer and publisher, Riot Games, League of Legends is often one of, if not the most, popular game in the Esports industry. As a result, achieving victories and championship titles is crucial for players and organizations to generate thousands upon millions of dollars, so constantly adapting and developing new strategies for success is crucial to survive.
 
-That being said, achieving a high win rate isn't necessarily obtained by simply being good at the game mechanically--understanding when and how to prioritize getting gold, the game's in-game currency, is equally, or debatably more, important. Since your character becomes stronger by securing more and more gold throughout several segments of the game, having more gold than your opponent can be seen as key to maximizing your chances of winning. Although you passively gain gold and can easily earn a small amount of gold by killing small creatures known as minions, bigger objectives like drakes (also known as dragons, but the term can be used interchangeably) can grant higher amount of golds. Though, it is actually the effects known as 'buffs' that objectives are targeted for, which can completely shift the odds of winning a match with powerful traits for a team.
+That being said, achieving a high win rate isn't necessarily obtained by simply being good at the game mechanically--understanding when and how to prioritize getting gold, the game's in-game currency, is equally, or debatably more, important. Since your character becomes stronger by securing more and more gold throughout several segments of the game, having more gold than your opponent can be seen as key to maximizing your chances of winning. Although you passively gain gold and can easily earn a small amount of gold by killing small creatures known as minions, bigger objectives like drakes (also known as dragons, but the term can be used interchangeably) can grant higher amount of gold. Though it is actually the effects known as 'buffs' that objectives are targeted for, which can completely shift the odds of winning a match with powerful traits for a team.
 
 With this in mind, we want to focus on this central question: **"How impactful is prioritizing elemental drakes in comparison to prioritizing gold to a team for their chances of winning?"**
 
 ### About the Dataset
-The dataset in which we are working with is recorded professionally and thoroughly by Oracle's Elixir. In particular, we are focusing on data extracted from professional League of Legends matches that took place in 2025. Adding on, this dataset contains important information about statistics and results that can be used by players to understand ideal courses of action within their own games and lead others to strategically dominate against their opponents. Diving into a bit more about specific data collected from these matches, this includes features such as the differences in gold for teams at particular intervals, elemental drakes each team has slain, and results of each match.
+The dataset that we are working with is recorded professionally and thoroughly by Oracle's Elixir. In particular, we are focusing on data extracted from professional League of Legends matches that took place in 2025. Adding on, this dataset contains important information about statistics and results that can be used by players to understand ideal courses of action within their own games and lead others to strategically dominate against their opponents. Diving into a bit more about specific data collected from these matches, this includes features such as the differences in gold for teams at particular intervals, the elemental drakes each team has slain, and the results of each match.
 
-Within the dataset offers a vast amount of matches, with there being 118932 rows containing information about those matches. Of the many columns that also help categorize all of the data, the following consists of the ones that were relevant to our central question and a brief description of each:
+The dataset offers a vast amount of matches, with there being 118932 rows containing information about those matches. Of the many columns that also help categorize all of the data, the following consists of the ones that were relevant to our central question and a brief description of each:
 
 - `league`: This column indicates the Esports tournament in which a game was played.
 
-- `side`: This column represents the side of a specific team or player in the game. There are two sides that are played indicated by the color `blue` and `red`.
+- `side`: This column represents the side of a specific team or player in the game. There are two sides that are played, indicated by the colors `blue` and `red`.
 
 - `goldat10`: This column represents how much gold a player or a team has at the 10-minute mark of a match.
 
-- `goldat15`, `goldat20`, and `goldat25`: These columns function the same way `goldat10` does, but represent the amount of gold at the 15, 20, and 25-minute marks of a match respectively.
+- `goldat15`, `goldat20`, and `goldat25`: These columns function the same way `goldat10` does, but represent the amount of gold at the 15, 20, and 25-minute marks of a match, respectively.
 
 - `opp_goldat10`: This column represents how much gold an enemy player or enemy team has at the 10-minute mark of a match.
   
-- `opp_goldat15`, `opp_goldat20`, and `opp_goldat25`: Similarly, each of these columns represent the same thing as `opp_goldat10`, but for their respective times within the match.
+- `opp_goldat15`, `opp_goldat20`, and `opp_goldat25`: Similarly, each of these columns represents the same thing as `opp_goldat10`, but for their respective times within the match.
 
 - `firstdragon`: This column indicates which team/player from a team was able to secure the first dragon slain in the match, which is represented with a **1** if successful and **0** if unsuccessful.
   
-- `elementaldrakes`: This column quantifies the amount of elemental drakes that a player's team has slain in the match.
+- `elementaldrakes`: This column quantifies the number of elemental drakes that a player's team has slain in the match.
   
-- `opp_elementaldrakes`: Similarly to `elementaldrakes`, this quantifies the amount of elemental drakes a player's opposing team has slain in the match.
+- `opp_elementaldrakes`: Similarly to `elementaldrakes`, this quantifies the number of elemental drakes a player's opposing team has slain in the match.
 
 - `dragons` and `opp_dragons`: These columns function similarly to `elementaldrakes` and `opp_elementaldrakes`, but are used to quantify every drake regardless of their elemental type.
   
@@ -41,7 +41,7 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
-When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `opp_goldat10`, `opp_goldat15`, `opp_goldat20`, `opp_goldat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. In this dataset, there are 16 columns with every 12 rows representing players/teams for a game with their statistics. the first ten rows of a set represent players while the the last two will represent teams. After getting all of the relevant columns for later steps, the head of the dataframe is what is displayed below. Additionally, it is important to note that this dataset will be further modified and explained based on the different analysis we need later.
+When cleaning our data, only a handful of columns out of the dozens were kept, while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `opp_goldat10`, `opp_goldat15`, `opp_goldat20`, `opp_goldat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. In this dataset, there are 16 columns, with every 12 rows representing players/teams for a game with their statistics. The first ten rows of a set represent players, while the last two represent teams. Our project is solely focused on overall team performance, so we will drop all individual player rows. After getting all of the relevant columns for later steps, an example of what the dataframe looks like is displayed below. Additionally, it is important to note that this dataset will be further modified and explained based on the different analyses we need later.
 
 |    | league   | side   |   goldat10 |   goldat15 |   goldat20 |   goldat25 |   golddiffat10 |   golddiffat15 |   golddiffat20 |   golddiffat25 |   firstdragon |   elementaldrakes |   opp_elementaldrakes |   dragons |   opp_dragons |   result |
 |---:|:---------|:-------|-----------:|-----------:|-----------:|-----------:|---------------:|---------------:|---------------:|---------------:|--------------:|------------------:|----------------------:|----------:|--------------:|---------:|
