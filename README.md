@@ -117,13 +117,13 @@ Based on the four scatter plots, it is visually clear that when a player/team is
 
 ### Interesting Aggregates
 [insert aggregates dataset]
-Above displays some interesting aggregates that may be useful in our analysis. Here, we groupby firstdragon in our cleaned dataset and calculuate the mean of the statistics.
+Above displays some interesting aggregates that may be useful in our analysis. Here, we groupby firstdragon in our cleaned dataset and calculuate the mean of the statistics with numeric values. When examing each of the columns with one another, we are able to easily see at a first glance that teams that secure the first dragon are, on average, in the lead in terms of gold, elemental dragons slain, and wins. This could potentially show that securing the first dragon of the game can typically put a team ahead of gold, and will greatly support a team in winning a match.
 
 ## Assessment of Missingness
 ### NMAR Analysis
 Within the entire dataset, there seems to be a several columns that are not missing at random (NMAR), which includes `ban1`, `ban2` `ban3` `ban4` `ban5`. When analyzing these columns, it is apparent that missingness does not depend on any other columns, and it is only these columns whose values are not missing based on a pattern or trend of some sort. When thinking about this from the perspective of a player, the player can simply choose to not ban a champion, perhaps due to strategic reasons. As a result, these columns should be NMAR because there is a chance that missingness just depends on the actual missing value as players cause this missing value from deciding not to ban.
 
-Additionally, there is a rather simple method of obtaining the data needed to explain the missingness, which would make these columns missing at random (MAR_. To do this, we can organize data into a column `used_all_bans`, which contains a value **1** for every ban has been made by players, and a **0** if every ban has not been made.
+Additionally, there is a rather simple method of obtaining the data needed to explain the missingness, which would make these columns missing at random (MAR). To do this, we can organize data into a column `used_all_bans`, which contains a value **1** for every ban has been made by players, and a **0** if every ban has not been made.
 
 ### Missingness Dependency
 This section uses permutation tests to determine whether or not the missingness of `golddiffat10` depends on two different columns, that being `league` and `side`. For both of the permutation tests, the test statistic chosen is Total Variance Distance (TVD) and the significance level that is chosen is 0.5.
