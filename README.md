@@ -41,7 +41,9 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
-When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `golddiffat10`, `golddiffat15`, `golddiffat20`, `golddiffat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. After getting all of the relevant columns for analysis, we 
+When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `golddiffat10`, `golddiffat15`, `golddiffat20`, `golddiffat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. After getting all of the relevant columns for later steps, the head of the dataframe is what is displayed below. Additionally, it is important to note that this dataset will be further modified and explained based on the different analysis we need later.
+
+[insert head of the dataframe]
 
 ### Univariate Analysis
 For the univariate analysis, it was performed on the gold differences seen across different time intervals of the game, that being the 10, 15, 20, and 25-minute mark. The following histograms show those distributions on a histogram with the matching times respectively.
@@ -114,7 +116,8 @@ Again, since the bivariate analysis consisted of similar columns, we generalized
 Based on the four scatter plots, it is visually clear that when a player/team is ahead in gold compared to their opponent, with players/teams winning as they maintain a higher gold difference later into the game.
 
 ### Interesting Aggregates
-lalalalalalalal
+[insert aggregates dataset]
+Above displays some interesting aggregates that may be useful in our analysis. Here, we groupby firstdragon in our cleaned dataset and calculuate the mean of the statistics.
 
 ## Assessment of Missingness
 ### NMAR Analysis
