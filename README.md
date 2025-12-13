@@ -116,7 +116,12 @@ Again, since the bivariate analysis consisted of similar columns, we generalized
 Based on the four scatter plots, it is visually clear that when a player/team is ahead in gold compared to their opponent, with players/teams winning as they maintain a higher gold difference later into the game.
 
 ### Interesting Aggregates
-[insert aggregates dataset]
+
+|   firstdragon |   goldat10 |   golddiffat10 |   elementaldrakes |   result |
+|--------------:|-----------:|---------------:|------------------:|---------:|
+|             0 |    15953.8 |       -90.7236 |           1.56813 | 0.424682 |
+|             1 |    16043.4 |        90.8434 |           2.78862 | 0.575424 |
+
 Above displays some interesting aggregates that may be useful in our analysis. Here, we groupby firstdragon in our cleaned dataset and calculuate the mean of the statistics with numeric values. When examing each of the columns with one another, we are able to easily see at a first glance that teams that secure the first dragon are, on average, in the lead in terms of gold, elemental dragons slain, and wins. This could potentially show that securing the first dragon of the game can typically put a team ahead of gold, and will greatly support a team in winning a match.
 
 ## Assessment of Missingness
