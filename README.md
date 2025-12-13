@@ -228,7 +228,7 @@ We will run a one sided hypothesis test to test if red has a greater recall than
 
 **Alternative Hypothesis:** The recall for red side is greater than the recall for blue side.
 
-**Test Statistic:** Difference in recall between blue side and red side with the test set.
+**Test Statistic:** Difference in recall between blue side and red side.
 
 **Significance Level:** 0.05
 
