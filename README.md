@@ -121,9 +121,7 @@ Above displays some interesting aggregates that may be useful in our analysis. H
 
 ## Assessment of Missingness
 ### NMAR Analysis
-Within the entire dataset, there seems to be a several columns that are not missing at random (NMAR), which includes `ban1`, `ban2` `ban3` `ban4` `ban5`. When analyzing these columns, it is apparent that missingness does not depend on any other columns, and it is only these columns whose values are not missing based on a pattern or trend of some sort. When thinking about this from the perspective of a player, the player can simply choose to not ban a champion, perhaps due to strategic reasons. As a result, these columns should be NMAR because there is a chance that missingness just depends on the actual missing value as players cause this missing value from deciding not to ban.
-
-Additionally, there is a rather simple method of obtaining the data needed to explain the missingness, which would make these columns missing at random (MAR). To do this, we can organize data into a column `used_all_bans`, which contains a value **1** for every ban has been made by players, and a **0** if every ban has not been made.
+Within the entire dataset, there seem to be several columns that are not missing at random (NMAR), which include `goldat20`, `opp_goldat20`, `goldat25`, and `opp_goldat25`. These values can be NaN, even when `goldat10` and `goldat15` are not. That is because it is possible for the game to end before this time. I would argue that the true values here should be the values at the time the game ended. This means the true values should typically be smaller values, making the missingness dependent on the values.
 
 ### Missingness Dependency
 This section uses permutation tests to determine whether or not the missingness of `golddiffat10` depends on two different columns, that being `league` and `side`. For both of the permutation tests, the test statistic chosen is Total Variance Distance (TVD) and the significance level that is chosen is 0.5.
