@@ -196,3 +196,16 @@ After performing our hypothesis test, we obtain a p-value of 0.0, which means we
 ## Final Model
 
 ## Fairness Analysis
+
+It is generally considered easier for red side to secure dragons, and blue side to get other objectives, such as baron and rift herald. Because we only used dragons in our model, we will investigate if this makes our model unfair for the blue or red side.
+
+We will run a one sided hypothesis test to test if red has a greater recall than blue. This is what we would expect because it is easier for red to get dragons (which our model uses), and it is easier for blue to get other objectives like baron (which our model does not use). 
+
+**Null Hypothesis:** The recall for blue side is greater than or equal to the recall for red side.
+
+**Alternative Hypothesis:** The recall for red side is greater than the recall for blue side.
+
+**Test Statistic:** Difference in recall between blue side and red side with the test set.
+
+**Significance Level:** 0.05
+
