@@ -41,7 +41,7 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
-When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `golddiffat10`, `golddiffat15`, `golddiffat20`, `golddiffat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. After getting all of the relevant columns for later steps, the head of the dataframe is what is displayed below. Additionally, it is important to note that this dataset will be further modified and explained based on the different analysis we need later.
+When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `opp_goldat10`, `opp_goldat15`, `opp_goldat20`, `opp_goldat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. After getting all of the relevant columns for later steps, the head of the dataframe is what is displayed below. Additionally, it is important to note that this dataset will be further modified and explained based on the different analysis we need later.
 
 [insert head of the dataframe]
 
