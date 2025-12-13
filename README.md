@@ -1,6 +1,6 @@
 # League of Legends Gold Difference Analysis
 
-This is a final project for DSC 80 at UCSD which determines how likely a professional League of Legends Esports team is to win a match given gold differences at particular times and the number of drakes. Using many different forms of analysis such as statistical methods of hypothesis testing, the baseline model of a decision tree, and fairness analysis, this projects intends to foster better decision-making within the popular game to improve strategies and win rates.
+This is a final project for DSC 80 at UCSD, which determines how likely a professional League of Legends Esports team is to win a match given gold differences at particular times and the number of drakes. Using many different forms of analysis, such as statistical methods of hypothesis testing and predictive modeling, this project intends to foster better decision-making within the popular game to improve strategies and win rates.
 
 Authors: Calvin Truong and Jake Wanderer
 
