@@ -174,18 +174,20 @@ Once finished performing permutation tests on the two columns, we find a TVD of 
 
 ## Hypothesis Testing
 
-**Null Hypothesis:** 
+Our hypothesis test is conducted to determine if there is a significant difference between a team's amount of gold at 10 minutes when they secure the first dragon and a team's amount of gold at 10 minutes when they lose the first dragon. This testing is necessary because it will help us determine how impactful slaying the first dragon is for gold at 10 minutes for a teams, which can be important in understanding better decision-making and shifting strategies when trying to win a match of League of Legends.
 
-**Alternative Hypothesis:** 
+**Null Hypothesis:** Team gold at 10 min for teams who won first dragon is equal to team gold at 10 min for teams who lost first dragon.
 
-**Test Statistic:**
+**Alternative Hypothesis:** Team gold at 10 min for teams who won first dragon is not equal to team gold at 10 min for teams who lost first dragon.
 
-**Significance Level:** 
+**Test Statistic:** Mean difference between team gold at 10 min for teams who won first dragon and lost first dragon.
+
+**Significance Level:** 0.05
 
 **Visualization:** Below is [brief explanation of what the visualization is]
 [insert image of histogram probably]
 
-After performing our hypothesis test, we obtain a p-value of _______, which means we _____ the null hypothesis
+After performing our hypothesis test, we obtain a p-value of 0.0, which means we reject the null hypothesis in favor of the alternative hypothesis. We conclude that team gold at 10 minutes when teams win first drake is **not** the same as a team's gold when they lose first dragon, which can suggest that knowing how to play around the early dragon spawns can drastically favor the odds of winning for a team seeing how they can earn more gold and become stronger than their opponents.
 
 ## Framing a Prediction Problem
 
@@ -194,3 +196,16 @@ After performing our hypothesis test, we obtain a p-value of _______, which mean
 ## Final Model
 
 ## Fairness Analysis
+
+It is generally considered easier for red side to secure dragons, and blue side to get other objectives, such as baron and rift herald. Because we only used dragons in our model, we will investigate if this makes our model unfair for the blue or red side.
+
+We will run a one sided hypothesis test to test if red has a greater recall than blue. This is what we would expect because it is easier for red to get dragons (which our model uses), and it is easier for blue to get other objectives like baron (which our model does not use). 
+
+**Null Hypothesis:** The recall for blue side is greater than or equal to the recall for red side.
+
+**Alternative Hypothesis:** The recall for red side is greater than the recall for blue side.
+
+**Test Statistic:** Difference in recall between blue side and red side with the test set.
+
+**Significance Level:** 0.05
+
