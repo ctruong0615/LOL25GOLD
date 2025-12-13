@@ -41,7 +41,7 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
-When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `opp_goldat10`, `opp_goldat15`, `opp_goldat20`, `opp_goldat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. After getting all of the relevant columns for later steps, the head of the dataframe is what is displayed below. Additionally, it is important to note that this dataset will be further modified and explained based on the different analysis we need later.
+When cleaning our data, only a handful of columns out of the dozens were kept while the other columns were dropped. We keep the columns `league`, `side`, `goldat10`, `goldat15`, `goldat20`, `goldat25`, `opp_goldat10`, `opp_goldat15`, `opp_goldat20`, `opp_goldat25`, `firstdragon`, `elementaldrakes`, `opp_elementaldrakes`, `dragons`, `opp_dragons`, and `result`. In this dataset, there are 16 columns with every 12 rows representing players/teams for a game with their statistics. the first ten rows of a set represent players while the the last two will represent teams. After getting all of the relevant columns for later steps, the head of the dataframe is what is displayed below. Additionally, it is important to note that this dataset will be further modified and explained based on the different analysis we need later.
 
 |    | league   | side   |   goldat10 |   goldat15 |   goldat20 |   goldat25 |   golddiffat10 |   golddiffat15 |   golddiffat20 |   golddiffat25 |   firstdragon |   elementaldrakes |   opp_elementaldrakes |   dragons |   opp_dragons |   result |
 |---:|:---------|:-------|-----------:|-----------:|-----------:|-----------:|---------------:|---------------:|---------------:|---------------:|--------------:|------------------:|----------------------:|----------:|--------------:|---------:|
@@ -161,12 +161,12 @@ Here, we find a TVD of 0.9907631405322191 and a p-value of 0.0 after performing 
   frameborder="0"
 ></iframe>
 
-As for `golddiffat10` and `side`, we will test to demonstrate that the missingness in `golddiffat10` is not dependent on `league`, with the following null and alternative hypothesis in mind.
+As for `goldat10` and `side`, we will test to demonstrate that the missingness in `goldat10` is not dependent on `league`, with the following null and alternative hypothesis in mind.
 
-**Null Hypothesis:** The distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing.
-**Alternative Hypothesis:** The distribution of `side` when `golddiffat10` is missing is ***not*** the same when `golddiffat10` is not missing.
+**Null Hypothesis:** The distribution of `side` when `goldat10` is missing is the same when `goldat10` is not missing.
+**Alternative Hypothesis:** The distribution of `side` when `goldat10` is missing is ***not*** the same when `goldat10` is not missing.
 
-Below is the observed distribution of `side` when `golddiffat10` is missing and when it is not missing.
+Below is the observed distribution of `side` when `goldat10` is missing and when it is not missing.
 
 <iframe
   src="assets/missingness2.html"
@@ -175,7 +175,7 @@ Below is the observed distribution of `side` when `golddiffat10` is missing and 
   frameborder="0"
 ></iframe>
 
-Once finished performing permutation tests on the two columns, we find a TVD of 0.0 and a p-value of 1.0. Below shows the empirical distribution of the TVDs. Using this information, we fail to reject the null hypothesis in favor of the alternative hypothesis because the p-value is greater than our significance level, which means that the distribution of `side` when `golddiffat10` is missing is the same when `golddiffat10` is not missing. As a result, this demonstrates that the missingness of `golddiffat10` does not depend on the `side` column.
+Once finished performing permutation tests on the two columns, we find a TVD of 0.0 and a p-value of 1.0. Below shows the empirical distribution of the TVDs. Using this information, we fail to reject the null hypothesis in favor of the alternative hypothesis because the p-value is greater than our significance level, which means that the distribution of `side` when `goldat10` is missing is the same when `goldat10` is not missing. As a result, this demonstrates that the missingness of `goldat10` does not depend on the `side` column.
 
 <iframe
   src="assets/TVD2.html"
@@ -183,6 +183,56 @@ Once finished performing permutation tests on the two columns, we find a TVD of 
   height="600"
   frameborder="0"
 ></iframe>
+
+Given the results of our Permutations tests, we can conclude missingness in the column goldat10 is MAR based on league and is not dependent on the side.
+
+| league      |   league |   goldat10 |
+|:------------|---------:|-----------:|
+| AL          |        1 |      1     |
+| ASI         |        1 |      1     |
+| Asia Master |        1 |      1     |
+| CD          |        1 |      1     |
+| CT          |        1 |      1     |
+| EBL         |        1 |      1     |
+| EM          |        1 |      1     |
+| EWC         |        1 |      1     |
+| FST         |        1 |      1     |
+| HC          |        1 |      1     |
+| HLL         |        1 |      1     |
+| HM          |        1 |      1     |
+| HW          |        1 |      1     |
+| IC          |        1 |      1     |
+| LAS         |        1 |      1     |
+| LCK         |        1 |      1     |
+| LCKC        |        1 |      1     |
+| LCP         |        1 |      1     |
+| LEC         |        1 |      1     |
+| LFL         |        1 |      1     |
+| LFL2        |        1 |      1     |
+| LIT         |        1 |      1     |
+| LJL         |        1 |      1     |
+| LPL         |        1 |      0     |
+| LPLOL       |        1 |      1     |
+| LRN         |        1 |      1     |
+| LRS         |        1 |      1     |
+| LTA         |        1 |      1     |
+| LTA N       |        1 |      1     |
+| LTA S       |        1 |      1     |
+| LVP SL      |        1 |      1     |
+| MSI         |        1 |      1     |
+| NACL        |        1 |      1     |
+| NEXO        |        1 |      1     |
+| NLC         |        1 |      1     |
+| PCS         |        1 |      1     |
+| PRM         |        1 |      1     |
+| PRMP        |        1 |      1     |
+| RL          |        1 |      1     |
+| ROL         |        1 |      1     |
+| TCL         |        1 |      1     |
+| VCS         |        1 |      1     |
+| WLDs        |        1 |      0.875 |
+
+Because every value in the LPL league is missing, we can not impute values here. We can impute values for WLDs, however WLDs only has 192 rows, of which only 12.5% are missing. This means we would only get 24 rows of missing values or 12 games. Additionally, the other column we care about elementaldrakes is missing for every missing value of goldat10. We have decided not to use missing values from this column because we still have about 19k rows and the information we do have on it is based on 'dragons (type unkown)'. Elderdragon is so different from the other dragons (it is almost always gamewinning), so it seems risky to use this column. We could try imputing values for elementaldrakes, but this could create rare pairings of elementaldrakes and opp_elementaldrakes much more frequently, and even impossible pairings such as (4,4).
 
 ## Hypothesis Testing
 
