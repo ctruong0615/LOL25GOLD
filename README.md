@@ -6,7 +6,7 @@ Authors: Calvin Truong and Jake Wanderer
 
 ## Introduction
 ### Background
-League of Legends (LoL) is a popular video games in the world classified as a multiplayer online battle arena (MOBA). In the game, teams of 5 are split among 5 positions that occupy different parts of the map (that being Top, Jungle, Middle, Bottom, and Support) to compete against each other and destroy the enemy's 'nexus', an important objective that ends the game with its descrution. Developed by the North American video game developer and publishered, Riot Games, League of Legends is often one of, if not the most, popular game in the Esports industry. As a result, achieving victories and championship titles is crucial for players and organizations to generate thousands upon millions of dollars, so constantly adapting and developing new strategies for success is crucial to survive.
+League of Legends (LoL) is one of the most popular video games in the world classified as a multiplayer online battle arena (MOBA). In the game, teams of 5 are split among 5 positions that occupy different parts of the map (that being Top, Jungle, Middle, Bottom, and Support) to compete against each other and destroy the enemy's 'nexus', an important objective that ends the game with its destruction. Developed by the North American video game developer and publisher, Riot Games, League of Legends is often one of, if not the most, popular game in the Esports industry. As a result, achieving victories and championship titles is crucial for players and organizations to generate thousands upon millions of dollars, so constantly adapting and developing new strategies for success is crucial to survive.
 
 That being said, achieving a high win rate isn't necessarily obtained by simply being good at the game mechanically--understanding when and how to prioritize getting gold, the game's in-game currency, is equally, or debatably more, important. Since your character becomes stronger by securing more and more gold throughout several segments of the game, having more gold than your opponent can be seen as key to maximizing your chances of winning. Although you passively gain gold and can easily earn a small amount of gold by killing small creatures known as minions, bigger objectives like drakes (also known as dragons, but the term can be used interchangeably) can grant higher amount of golds. Though, it is actually the effects known as 'buffs' that objectives are targeted for, which can completely shift the odds of winning a match with powerful traits for a team.
 
@@ -184,6 +184,8 @@ Our hypothesis test is conducted to determine if there is a significant differen
 **Test Statistic:** Mean difference between team gold at 10 min for teams who won first dragon and lost first dragon.
 
 **Significance Level:** 0.05
+
+We chose to do a one-sided hypothesis test because it is expected that the team that got the firstdragon is ahead in the game, and therefore has more gold. Because we are doing a one-sided test, we are using Mean difference as our test statistic.
 
 After performing our hypothesis test, we obtain a p-value of 0.0, which means we reject the null hypothesis in favor of the alternative hypothesis. We conclude that team gold at 10 minutes when teams win first drake is **not** the same as a team's gold when they lose first dragon, which can suggest that knowing how to play around the early dragon spawns can drastically favor the odds of winning for a team seeing how they can earn more gold and become stronger than their opponents.
 
