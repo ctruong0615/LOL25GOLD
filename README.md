@@ -196,6 +196,10 @@ After performing our hypothesis test, we obtain a p-value of 0.0, which means we
 
 ## Framing a Prediction Problem
 
+We will predict who will win the game based on both team gold and dragons at some minute (X) in the game. This is a binary classification problem (as there are no ties), with `result` as the response variable. We chose `result` because it is the only outcome in a game that truly matters, as every game is a clean slate.
+
+For our baseline model, we are predicting the outcome of the game from minute 10. For our final model, we are predicting the outcome of the game at the time when every elemental dragon has been taken, that is, when one team gets their 4th dragon. This time changes depending on the game, and is not guaranteed to happen (but typically does). Our model can still be used prior to this time; however, it may be biased. Despite these limitations, this is still a useful model.
+
 ## Baseline Model
 
 ## Final Model
