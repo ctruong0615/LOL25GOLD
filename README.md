@@ -25,9 +25,9 @@ Within the dataset offers a vast amount of matches, with there being 118932 rows
 
 - `goldat15`, `goldat20`, and `goldat25`: These columns function the same way `goldat10` does, but represent the amount of gold at the 15, 20, and 25-minute marks of a match respectively.
 
-- `golddiffat10`: This column represents the difference in gold between a player and the player of the corresponding position on the opposing team at the 10-minute mark of a match. A positive value represents that the player is ahead in gold to their opponent while a negative value indicates that a player is behind in gold.
+- `opp_goldat10`: This column represents how much gold an enemy player or enemy team has at the 10-minute mark of a match.
   
-- `golddiffat15`, `golddiffat20`, and `golddiffat25`: Similarly, each of these columns represent the same thing as `golddiffat10`, but for their respective times within the match.
+- `opp_goldat15`, `opp_goldat20`, and `opp_goldat25`: Similarly, each of these columns represent the same thing as `opp_goldat10`, but for their respective times within the match.
 
 - `firstdragon`: This column indicates which team/player from a team was able to secure the first dragon slain in the match, which is represented with a **1** if successful and **0** if unsuccessful.
   
